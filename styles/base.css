@@ -3,7 +3,7 @@
    =========================== */
 :root {
   --primary-color: #006d77;   /* teal */
-  --secondary-color: #228b22; /* green*/
+  --secondary-color: #1B5E20; /* green*/
   --accent-color: #023047;    /* dark navy */
   --light-bg: #f1faee;
   --heading-font: 'Merriweather', serif;
@@ -15,10 +15,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-font-family: 'Roboto', sans-serif;
 }
 
 /* Body */
@@ -119,20 +115,17 @@ main h1 {
 
 
 .cards-container {
-  display: flex;          /* puts left and right side by side */
-  justify-content: space-between; /* spreads them apart */
-  align-items: flex-start; /* aligns them at the top */
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 20px;
+align-items: start;
 }
-
 .cards-left {
-  flex: 2;                /* left column wider */
+width: 100%;
 }
-
-.card.resources {
-  display: block;   /* override flex so content stacks naturally */
-  text-align: left; /* optional: align text to the left */
+.resources {
+margin-top: 0;
 }
-
 
 .card.resources ul {
   list-style-type: none;   /* removes bullets */

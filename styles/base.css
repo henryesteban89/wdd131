@@ -123,9 +123,6 @@ align-items: start;
 .cards-left {
 width: 100%;
 }
-.resources {
-margin-top: 0;
-}
 
 .card.resources ul {
   list-style-type: none;   /* removes bullets */

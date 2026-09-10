@@ -23,7 +23,7 @@ font-family: 'Roboto', sans-serif;
 
 /* Body */
 body {
-  font-family: var(--body-font);
+  font-family: "Roboto", sans-serif;
   background-color: var(--light-bg);
   color: var(--accent-color);
   line-height: 1.6;

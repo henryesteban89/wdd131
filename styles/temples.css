@@ -71,7 +71,7 @@ figure img {
 figcaption {
   margin-top: 0.5rem;
   font-style: italic;
-  color: #321b9a; /* purple captions */
+  color: black; /* purple captions */
 }
 
 footer {

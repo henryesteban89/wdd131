@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Antigua Guatemala | WDD 131 - Henry Esteban</title>
+  <link rel="stylesheet" href="styles/place.css">
+  <script src="scripts/place.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Antigua Guatemala</h1>
+  </header>
+
+  <main>
+   <section class="hero">
+  <picture>
+    <source srcset="images/guatemala-large.webp" media="(min-width: 1500px)">
+    <source srcset="images/guatemala-medium.webp" media="(min-width: 1000px)">
+    <img src="images/guatemala-small.webp" alt="Scenic view of Antigua Guatemala">
+  </picture>
+
+  <!-- Overlay content -->
+  <div class="overlay">
+    <section class="data">
+      <h2>Data</h2>
+      <ul>
+        <li><strong>Area:</strong> 108,889 sq km</li>
+        <li><strong>Population:</strong> ~17,000,000</li>
+        <li><strong>Capital:</strong> Guatemala City</li>
+        <li><strong>Languages:</strong> Spanish, Mayan languages</li>
+        <li><strong>Currency:</strong> Quetzal (GTQ)</li>
+        <li><strong>Time Zone:</strong> UTC‑6</li>
+        <li><strong>Calling Code:</strong> +502</li>
+        <li><strong>Internet TLD:</strong> .gt</li>
+      </ul>
+    </section>
+
+    <section class="weather">
+      <h2 class="weather">Weather</h2>
+      <ul class="weather-details">
+        <li><strong>Temperature:</strong> <span id="temperature">25°C</span></li>
+        <li><strong>Conditions:</strong> Partly Cloudy</li>
+        <li><strong>Wind:</strong> <span id="windSpeed">10 km/h</span></li>
+        <li><strong>Wind Chill:</strong> <span id="windChill">N/A</span></li>
+        <li><img src="images/weather-icon.svg" alt="Weather icon" class="mobile-icon"></li>
+      </ul>
+    </section>
+  </div>
+</section>
+
+
+
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="year"></span> | Henry Esteban | Guatemala City, Guatemala
+    </p>
+    <p>Last Modification: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>

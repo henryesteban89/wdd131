@@ -48,7 +48,7 @@ header, footer {
 
 
 table {
-  width: 50%;
+  width: 25%;
   height: 25px; ;
   border-collapse: collapse;
   background-color: rgba(255, 255, 255, 0.922);
@@ -94,16 +94,30 @@ tr:last-child td {
     align-self:start;        /* stick to top */
   }
 
-  h2.weather::after {
-    content: " ⛅";
-    font-size: 1.5rem;
-    margin-left: 0.5rem;
-  }
+.mobile-icon {
+  width: 40px;
+  height: auto;
+  fill: #333; /* matches your color scheme */
+}
 
+@media (min-width: 800px) {
   .mobile-icon {
-    display: block;
+    display: none; /* hide on desktop */
   }
 }
+
+h2.weather::after {
+  content: "⛅"; /* pseudo-element for large view */
+  margin-left: 0.5rem;
+}
+
+
+.weather-icon {
+  width: 30px;
+  height: 30px;
+  fill: #333; /* optional color */
+}
+
 
 
 

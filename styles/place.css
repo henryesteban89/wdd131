@@ -101,7 +101,7 @@ tr:last-child td {
   }
 
   .mobile-icon {
-    display: none;
+    display: block;
   }
 }
 

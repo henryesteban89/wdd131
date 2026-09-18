@@ -35,42 +35,63 @@ header, footer {
 
 /* Overlay container */
 .overlay {
-  position: absolute;
+  position:absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 1rem;
   box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+
+  color: var(--text-color);
+  border-radius: 8px;
 }
 
-/* Lists */
-.data ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-  .weather ul {
-list-style: none;
-padding: 0;
-margin: 0;
+
+table {
+  width: 50%;
+  height: 25px; ;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.922);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  margin-top: 0.5rem;
 }
 
-.data li, .weather li {
-  margin: 0.5rem 0;
-  
+td {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid #ddd;
 }
 
-.mobile-icon {
-  width: 40px;
-  height: auto;
+td:first-child {
+  font-weight: bold;
+  width: 40%;
 }
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+
 
 /* Desktop layout */
 @media (min-width: 800px) {
   .overlay {
+    position: absolute;
+    bottom:0;
+    left:0;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Data left, Weather right */
-    align-items: start;
+    grid-template-columns: 2fr 1fr; /* Data left, Weather right */
+   
+  }
+
+
+    .data {
+    justify-self: start;      /* stick to left */
+  }
+
+  .weather {
+    justify-self: start;        /* push to right */
+    align-self:start;        /* stick to top */
   }
 
   h2.weather::after {
@@ -83,6 +104,29 @@ margin: 0;
     display: none;
   }
 }
+
+
+
+.data h2 {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  padding: 0.5rem;
+  border-radius: 6px 6px 0 0;
+  margin: 0;
+  text-align: center;
+}
+
+.weather h2 {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  padding: 0.5rem;
+  border-radius: 6px 6px 0 0;
+  margin: 0;
+  text-align: center;
+}
+
+
+
 
 
 

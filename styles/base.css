@@ -155,7 +155,7 @@ width: 100%;
 
 
 /* ===========================
-   9/21/2026 country place 
+   9/21/2026 country place
 
    =========================== */
 footer {
@@ -330,3 +330,136 @@ h2.weather::after {
 }
 
 /*============================================
+
+
+
+
+:root {
+  --primary-color: #0066cc; /* Guatemala flag blue */
+  --secondary-color: #FFD700; /* Gold */
+  --background-color: #f9f9f9;
+  --font-family: Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/* Banner header */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+}
+
+.hero picture img {
+  width: 100%;
+  height: auto;   /* let image scale naturally */
+  display: block;
+}
+
+/* Overlay container: mobile default */
+.overlay {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Data and Weather boxes */
+.data, .weather {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  max-width: 280px;
+}
+
+/* Large screen: grid layout */
+@media (min-width: 1000px) {
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 2rem;
+  }
+
+  .data {
+    grid-column: 1; /* left column */
+    grid-row: 2;    /* bottom left */
+    justify-self: start;
+    align-self: start;
+  }
+
+  .weather {
+    grid-column: 2; /* right column */
+    grid-row: 1;    /* top right */
+    justify-self: end;
+    align-self: center;
+  }
+
+  /* Show pseudo-element only in large view */
+  .weather h2::after {
+    content: " ⛅";
+  }
+
+  /* Hide SVG icon in large view */
+  .weather .icon {
+    display: none;
+  }
+}
+
+/* Mobile weather icon */
+@media (max-width: 600px) {
+  .weather h2::after {
+    content: ""; /* remove pseudo-element in mobile */
+  }
+  .weather .icon {
+    background: url("../images/weather.svg") no-repeat center;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Tables fill their card */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  margin-top: 0.5rem;
+}
+
+td {
+  padding: 0.4rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}

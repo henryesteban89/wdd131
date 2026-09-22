@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #006400; /* Dark green */
+  --primary-color: #0066cc; /* Guatemala flag blue */
   --secondary-color: #FFD700; /* Gold */
   --background-color: #f9f9f9;
   --font-family: Arial, sans-serif;
@@ -12,12 +12,15 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
+/* Banner header */
 header {
   background-color: var(--primary-color);
   color: white;
   text-align: center;
   padding: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 /* Hero section */
@@ -27,77 +30,92 @@ header {
 
 .hero picture img {
   width: 100%;
-  height: auto;
+  height: auto;   /* let image scale naturally */
   display: block;
 }
 
-/* Remove big overlay background */
+/* Overlay container: mobile default */
 .overlay {
-  position: static;   /* no absolute positioning in mobile */
+  position: static;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: none;   /* no white background */
   padding: 1rem;
 }
 
 /* Data and Weather boxes */
 .data, .weather {
-  background: rgba(255, 255, 255, 0.9); /* small semi-transparent box */
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid #ddd;
-  padding: 0.5rem 1rem;  /* compact padding */
+  padding: 0.8rem 1rem;
   border-radius: 6px;
   font-size: 0.9rem;
-  max-width: 100%;       /* full width in mobile */
-  margin: 0 auto;        /* center horizontally */
+  max-width: 280px;
 }
 
-/* Larger view: side-by-side layout */
+/* Large screen: grid layout */
 @media (min-width: 1000px) {
   .overlay {
     position: absolute;
-    bottom:0;
-    left:0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Data left, Weather right */
-   
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 2rem;
   }
 
-   .data {
-    justify-self: start;      /* stick to left */
+  .data {
+    grid-column: 1; /* left column */
+    grid-row: 2;    /* top row */
+    justify-self: start;
+    align-self: start;
   }
 
   .weather {
-    justify-self: start;        /* push to right */
-    align-self:start;        /* stick to top */
+    grid-column: 2; /* right column */
+    grid-row: 1;    /* bottom row */
+    justify-self: end;
+    align-self: center;
   }
 
-  .data, .weather {
-    max-width: 300px; /* compact side-by-side boxes */
-  }
+  /* Show pseudo-element only in large view */
+ /* Default: no pseudo-element, no SVG */
+/* Default: hide SVG icon */
+.weather .icon {
+  display: none;
 }
 
-
-/* Larger view: side-by-side layout */
+/* Large screen: show pseudo-element only */
 @media (min-width: 1000px) {
-  .overlay {
-    flex-direction: row;       /* switch to horizontal layout */
-    justify-content: center;
-    gap: 2rem;                 /* space between boxes */
+  .weather h2::after {
+    content: " ⛅"; /* emoticon only in large view */
   }
-
-  .data, .weather {
-    max-width: 300px;          /* slightly larger but still compact */
+  .weather .icon {
+    display: none; /* keep SVG hidden in large view */
   }
 }
 
+/* Mobile: show SVG icon, remove pseudo-element */
+@media (max-width: 600px) {
+  .weather h2::after {
+    content: ""; /* no emoticon in mobile */
+  }
+  .weather .icon {
+    background: url("../images/weather.svg") no-repeat center;
+    display: inline-block; /* show SVG only in mobile */
+    width: 24px;
+    height: 24px;
+  }
+}
 
-/* Tables */
+/* Tables fill their card */
 table {
-  width: 50%;
-  height: 25px; ;
+  width: 100%;
   border-collapse: collapse;
-  background-color: rgba(255, 255, 255, 0.922);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   margin-top: 0.5rem;
@@ -116,27 +134,10 @@ footer {
   margin-top: 2rem;
 }
 
-/* Weather icon pseudo-element for wider view */
-.weather h2::after {
-  content: " ⛅";
-}
-
-/* Responsive layout */
-@media (min-width: 768px) {
-  .overlay {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .data, .weather {
-    flex: 1;
-    margin: 0.5rem;
-  }
-}
-
-@media (max-width: 600px) {
+/* Mobile weather icon */
+@media (max-width: 600px) 
   .weather h2::after {
-    content: ""; /* remove emoticon in mobile */
+    content: ""; /* remove pseudo-element in mobile */
   }
   .weather .icon {
     background: url("../images/weather.svg") no-repeat center;
@@ -144,12 +145,12 @@ footer {
     width: 24px;
     height: 24px;
   }
+
+
+ footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
-
-
-
-
-
-
-
-

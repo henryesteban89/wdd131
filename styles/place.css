@@ -1,52 +1,98 @@
 :root {
-  --primary-color: #0066cc;   /* Guatemala flag blue */
-  --secondary-color: #ffffff; /* White */
-  --accent-color: #228b22;    /* Green */
-  --text-color: #333;
-  --font-main: 'Roboto', Arial, sans-serif;
+  --primary-color: #006400; /* Dark green */
+  --secondary-color: #FFD700; /* Gold */
+  --background-color: #f9f9f9;
+  --font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: var(--font-main);
+  font-family: var(--font-family);
   margin: 0;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
 }
 
-header, footer {
+/* Header */
+header {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: white;
   text-align: center;
   padding: 1rem;
 }
 
+/* Hero section */
 .hero {
   position: relative;
-  height: 100vh;        /* full screen height */
-  overflow: hidden;
 }
 
-.hero img {
+.hero picture img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;    /* crop nicely */
+  height: auto;
   display: block;
 }
 
-/* Overlay container */
+/* Remove big overlay background */
 .overlay {
-  position:absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  position: static;   /* no absolute positioning in mobile */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: none;   /* no white background */
   padding: 1rem;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+}
 
-  color: var(--text-color);
-  border-radius: 8px;
+/* Data and Weather boxes */
+.data, .weather {
+  background: rgba(255, 255, 255, 0.9); /* small semi-transparent box */
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;  /* compact padding */
+  border-radius: 6px;
+  font-size: 0.9rem;
+  max-width: 100%;       /* full width in mobile */
+  margin: 0 auto;        /* center horizontally */
+}
+
+/* Larger view: side-by-side layout */
+@media (min-width: 1000px) {
+  .overlay {
+    position: absolute;
+    bottom:0;
+    left:0;
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Data left, Weather right */
+   
+  }
+
+   .data {
+    justify-self: start;      /* stick to left */
+  }
+
+  .weather {
+    justify-self: start;        /* push to right */
+    align-self:start;        /* stick to top */
+  }
+
+  .data, .weather {
+    max-width: 300px; /* compact side-by-side boxes */
+  }
 }
 
 
+/* Larger view: side-by-side layout */
+@media (min-width: 1000px) {
+  .overlay {
+    flex-direction: row;       /* switch to horizontal layout */
+    justify-content: center;
+    gap: 2rem;                 /* space between boxes */
+  }
+
+  .data, .weather {
+    max-width: 300px;          /* slightly larger but still compact */
+  }
+}
+
+
+/* Tables */
 table {
   width: 50%;
   height: 25px; ;
@@ -58,89 +104,46 @@ table {
 }
 
 td {
-  padding: 0.6rem 0.8rem;
-  border-bottom: 1px solid #ddd;
+  padding: 0.4rem;
 }
 
-td:first-child {
-  font-weight: bold;
-  width: 40%;
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-tr:last-child td {
-  border-bottom: none;
+/* Weather icon pseudo-element for wider view */
+.weather h2::after {
+  content: " ⛅";
 }
 
-
-
-/* Desktop layout */
-@media (min-width: 800px) {
+/* Responsive layout */
+@media (min-width: 768px) {
   .overlay {
-    position: absolute;
-    bottom:0;
-    left:0;
-    display: grid;
-    grid-template-columns: 2fr 1fr; /* Data left, Weather right */
-   
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-
-    .data {
-    justify-self: start;      /* stick to left */
-  }
-
-  .weather {
-    justify-self: start;        /* push to right */
-    align-self:start;        /* stick to top */
-  }
-
-  h2.weather::after {
-    content: " ⛅";
-    font-size: 1.5rem;
-    margin-left: 0.5rem;
-  }
-
-  .mobile-icon {
-    display: block;
+  .data, .weather {
+    flex: 1;
+    margin: 0.5rem;
   }
 }
 
-
-.mobile-icon {
-  width: 40px;
-  height: auto;
-  fill: #333; /* matches your color scheme */
-}
-
-@media (min-width: 800px) {
-  .mobile-icon {
-    display: none; /* hide on desktop */
+@media (max-width: 600px) {
+  .weather h2::after {
+    content: ""; /* remove emoticon in mobile */
   }
-}
-
-h2.weather::after {
-  content: "⛅"; /* pseudo-element for large view */
-  margin-left: 0.5rem;
-}
-
-
-
-.data h2 {
-  background-color: var(--accent-color);
-  color: var(--secondary-color);
-  padding: 0.5rem;
-  border-radius: 6px 6px 0 0;
-  margin: 0;
-  text-align: center;
-}
-
-.weather h2 {
-  background-color: var(--accent-color);
-  color: var(--secondary-color);
-  padding: 0.5rem;
-  border-radius: 6px 6px 0 0;
-  margin: 0;
-  text-align: center;
+  .weather .icon {
+    background: url("../images/weather.svg") no-repeat center;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+  }
 }
 
 

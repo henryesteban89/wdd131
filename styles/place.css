@@ -88,6 +88,7 @@ header {
 .weather .icon {
   display: none;
 }
+}
 
 /* Large screen: show pseudo-element only */
 @media (min-width: 1000px) {

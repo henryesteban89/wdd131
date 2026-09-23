@@ -82,8 +82,9 @@ header {
   }
 
   /* Show pseudo-element only in large view */
- /* Default: no pseudo-element, no SVG */
-/* Default: hide SVG icon */
+
+/* Large screen: show pseudo-element only */
+/* Default: hide icon */
 .weather .icon {
   display: none;
 }
@@ -91,21 +92,21 @@ header {
 /* Large screen: show pseudo-element only */
 @media (min-width: 1000px) {
   .weather h2::after {
-    content: " ⛅"; /* emoticon only in large view */
+    content: " ⛅";
   }
   .weather .icon {
-    display: none; /* keep SVG hidden in large view */
+    display: none; /* keep hidden */
   }
 }
 
-/* Mobile: show SVG icon, remove pseudo-element */
+/* Mobile: show SVG icon */
 @media (max-width: 600px) {
   .weather h2::after {
-    content: ""; /* no emoticon in mobile */
+    content: "";
   }
   .weather .icon {
     background: url("../images/weather.svg") no-repeat center;
-    display: inline-block; /* show SVG only in mobile */
+    display: inline-block;
     width: 24px;
     height: 24px;
   }
@@ -127,27 +128,6 @@ td {
 
 /* Footer */
 footer {
-  background-color: var(--primary-color);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-
-/* Mobile weather icon */
-@media (max-width: 600px) 
-  .weather h2::after {
-    content: ""; /* remove pseudo-element in mobile */
-  }
-  .weather .icon {
-    background: url("../images/weather.svg") no-repeat center;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-  }
-
-
- footer {
   background-color: var(--primary-color);
   color: white;
   text-align: center;

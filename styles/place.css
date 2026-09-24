@@ -46,7 +46,7 @@ header {
 /* Data and Weather boxes */
 .data, .weather {
   background: rgba(255, 255, 255, 0.9);
-  border: 1px solid #ddd;
+  border: 2px solid green;   /* ✅ Green border */
   padding: 0.8rem 1rem;
   border-radius: 6px;
   font-size: 0.9rem;
@@ -81,26 +81,13 @@ header {
     align-self: center;
   }
 
-  /* Show pseudo-element only in large view */
 
-/* Large screen: show pseudo-element only */
-/* Default: hide icon */
 .weather .icon {
   display: none;
 }
 }
 
-/* Large screen: show pseudo-element only */
-@media (min-width: 1000px) {
-  .weather h2::after {
-    content: " ⛅";
-  }
-  .weather .icon {
-    display: none; /* keep hidden */
-  }
-}
-
-/* Mobile: show SVG icon */
+  /* Mobile: show SVG icon */
 @media (max-width: 600px) {
   .weather h2::after {
     content: "";
@@ -112,6 +99,18 @@ header {
     height: 24px;
   }
 }
+
+
+/* Large screen: show pseudo-element only */
+@media (min-width: 1000px) {
+  .weather h2::after {
+    content: " ⛅";
+  }
+  .weather .icon {
+    display: none; /* keep hidden */
+  }
+}
+
 
 /* Tables fill their card */
 table {

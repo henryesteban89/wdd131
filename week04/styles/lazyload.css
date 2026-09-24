@@ -1,0 +1,38 @@
+/* Center column layout */
+main {
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Images stacked in one column */
+img {
+  display: block;
+  margin: 20px auto;
+  width: 400px;
+  height: 600px;
+  object-fit: cover;
+
+  /* Fade-in animation */
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    filter: brightness(0);
+  }
+  to {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #555;
+}

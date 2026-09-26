@@ -1,15 +1,8 @@
-/* Base gallery layout for mobile */
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-/* Medium screens (tablet) */
+/* Tablet screens */
 @media (min-width: 768px) {
   header {
     display: flex;
-    justify-content: space-between; /* pushes nav to the right */
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -27,7 +20,7 @@
   }
 
   .gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   figure {
@@ -42,7 +35,7 @@
   }
 
   figure img:hover {
-    transform: scale(1.05); /* subtle zoom */
+    transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
 
@@ -52,10 +45,10 @@
   }
 }
 
-/* Large screens (desktop) */
+/* Desktop screens */
 @media (min-width: 1024px) {
   .gallery {
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-columns: repeat(3, 1fr);
     margin: 1rem auto;
     max-width: 1200px;
   }

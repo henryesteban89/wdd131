@@ -6,7 +6,7 @@
   }
 
   nav {
-    display: flex !important;
+    display: flex;
     flex-direction: row;
     gap: 1rem;
     background: none;
@@ -17,7 +17,6 @@
   #menu {
     display: none; /* hide hamburger on desktop */
   }
-}
 
   .gallery {
     display: grid;
@@ -47,25 +46,8 @@
     margin-top: 0.5rem;
     font-weight: 600;
   }
-
 }
 
-
-
-
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* Larger screens */
 @media (min-width: 768px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -85,5 +67,3 @@ footer {
   color: #ffffff;
   margin-top: 30px;
 }
-
-

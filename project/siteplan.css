@@ -25,3 +25,8 @@ img {
   max-width: 200px;
   margin-top: 1rem;
 }
+
+.color-blue { color: #004aad; }
+.color-orange { color: #f4a300; }
+.color-gray { color: #2e2e2e; }
+

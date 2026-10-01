@@ -1,33 +1,60 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans&display=swap');
+
+/* General reset */
 body {
   font-family: 'Open Sans', sans-serif;
-  margin: 20px;
-  background-color: #f9f9f9;
-  color: #2e2e2e;
+  background-color: #f4f4f4; /* Secondary color for background */
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-h1, h2 {
-  font-family: 'Roboto', sans-serif;
-  color: #004aad;
-}
-
-header, footer {
+/* Header styling */
+header {
+  background-color: #004aad; /* Primary deep blue */
+  color: white;
   text-align: center;
   padding: 1rem;
-  background-color: #2e2e2e;
+}
+
+header h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  margin: 0;
+}
+
+header p {
+  font-style: italic;
+}
+
+/* Section headings */
+h2 {
+  font-family: 'Roboto', sans-serif;
+  color: #004aad;
+  margin-top: 1.5rem;
+}
+
+/* Wireframe images */
+section img {
+  max-width: 25%;
+  border: 2px solid #004aad;
+  margin: 1rem 0;
+}
+
+/* Footer */
+footer {
+  background-color: #004aad;
   color: white;
+  text-align: center;
+  padding: 0.5rem;
 }
 
-section {
-  margin-bottom: 2rem;
+header img {
+  width: 120px;   /* adjust size */
+  height: auto;   /* keeps proportions */
 }
 
-img {
-  max-width: 200px;
-  margin-top: 1rem;
-}
 
-.color-blue { color: #004aad; }
-.color-orange { color: #f4a300; }
-.color-gray { color: #2e2e2e; }
 
 

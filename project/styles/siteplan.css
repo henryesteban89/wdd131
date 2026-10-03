@@ -38,6 +38,8 @@ h2 {
 /* Wireframe images */
 section img {
   max-width: 25%;
+  
+
   border: 2px solid #004aad;
   margin: 1rem 0;
 }

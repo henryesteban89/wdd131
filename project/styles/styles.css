@@ -1,13 +1,15 @@
+/* Apply Open Sans to body text */
 body {
-  body {
   font-family: 'Open Sans', sans-serif;
-}
   margin: 0;
   padding: 0;
 }
+
+/* Apply Roboto to headings */
 h1, h2, h3 {
   font-family: 'Roboto', sans-serif;
 }
+
 header nav {
   display: flex;
   justify-content: space-between;

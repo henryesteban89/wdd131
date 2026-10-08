@@ -3,40 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Contact Henry's Auto Repair">
+  <meta name="author" content="Henry Esteban">
+  <title>Contact - Henry's Auto Repair</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/contact.css">
 </head>
 <body>
+  <!-- Header & Navigation -->
   <header>
+    <div class="logo">
+      <img src="images/site-logo.jpg" alt="Auto Repair Logo">
+      <h1>Henry's Auto Repair</h1>
+    </div>
+
+    <!-- Hamburger button -->
+    <button id="menu" aria-label="Toggle Menu">☰</button>
+
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Banner -->
+  <section class="banner">
+    <img src="images/contact-banner.jpg" alt="Contact workshop">
+    <a href="services.html" class="btn">View Services</a>
+  </section>
+
+  <!-- Main Content -->
   <main>
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" required>
+    <section class="contact-info">
+      <h2>Company Information</h2>
+      <p><strong>Address:</strong> 5a Avenida, Guatemala City</p>
+      <p><strong>Phone:</strong> +502 5555 1234</p>
+      <p><strong>Email:</strong> info@henrysautorepair.com</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" required>
+    <section class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form id="contactForm" action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
 
-      <label for="message">Message:</label>
-      <textarea id="message" required></textarea>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-      <button type="submit">Send</button>
-    </form>
-    <p id="formMessage"></p>
+        <p>Purpose of Message:</p>
+        <label><input type="radio" name="purpose" value="General Inquiry" required> General Inquiry</label>
+        <label><input type="radio" name="purpose" value="Reservation Question"> Reservation Question</label>
+        <label><input type="radio" name="purpose" value="Website Suggestion"> Website Suggestion</label>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <label><input type="checkbox" name="newsletter"> Please subscribe me to the monthly newsletter</label>
+
+        <button type="submit" class="btn">Submit Message</button>
+      </form>
+    </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Henry</p>
+    <p>&copy; 2026 Henry's Auto Repair | WDD 131 Final Project</p>
+    <a href="references.html">References</a>
   </footer>
-  <script src="script.js"></script>
+
+  <!-- JavaScript -->
+  <script src="scripts/contact.js"></script>
 </body>
 </html>

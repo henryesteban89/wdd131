@@ -7,9 +7,24 @@ menuButton.addEventListener("click", () => {
   menuButton.textContent = nav.classList.contains("open") ? "✖" : "☰";
 });
 
-// Simple review form handler
+// Reviews array from localStorage
+const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+// Review form handler
 document.getElementById("reviewForm").addEventListener("submit", function(event) {
   event.preventDefault();
-  alert("Thank you for your review! It has been submitted.");
+
+  const review = {
+    service: document.getElementById("product").value,
+    rating: document.querySelector("input[name='rating']:checked").value,
+    text: document.getElementById("review").value,
+    user: document.getElementById("username").value
+  };
+
+  reviews.push(review);
+  localStorage.setItem("reviews", JSON.stringify(reviews));
+
+  alert(`Thanks, ${review.user}! Your ${review.service} review was saved.`);
   this.reset();
 });
+

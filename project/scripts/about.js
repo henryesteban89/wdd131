@@ -22,3 +22,18 @@ navLinks.forEach(link => {
     link.style.fontWeight = "bold";
   }
 });
+
+// ============================
+// Last Updated Date
+// ============================
+function showLastUpdated() {
+  const lastModifiedElement = document.getElementById("lastModified");
+  if (lastModifiedElement) {
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = today.toLocaleDateString('en-US', options);
+    lastModifiedElement.textContent = `Last Updated: ${formattedDate}`;
+  }
+}
+showLastUpdated();
+
